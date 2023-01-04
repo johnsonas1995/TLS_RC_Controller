@@ -13,6 +13,11 @@ export default function App() {
   const [steerVal, setSteerVal] = useState(0);
   const [lights, setLights] = useState(false);
 
+  const lightsHandler = () => {
+    setLights(current => !current)
+    console.log(lights)
+  }
+
   return (
     <>
     <View style={styles.container}>
@@ -41,7 +46,7 @@ export default function App() {
     <Text style={{alignSelf:'flex-end'}}>   Steering: {steerVal}   </Text>
     <Button
         style={{position:'absolute', bottom:0, left:0}}
-        onPress={setLights}
+        onPress={lightsHandler}
         title="Lights"
         color="#40E0D0"
         accessibilityLabel="Toggle Lights"
